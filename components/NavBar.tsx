@@ -28,7 +28,7 @@ export default function NavBar() {
           Home
         </li>
         <li className="cursor-pointer h-full px-6 bg-transparent text-gray-700 flex items-center justify-center hover:bg-gray-700/10">
-          Habitaciones
+          Servicios
         </li>
         <li className="cursor-pointer h-full px-6 bg-transparent text-gray-700 flex items-center justify-center hover:bg-gray-700/10">
           Precios
@@ -51,20 +51,20 @@ export default function NavBar() {
       {/* Mobile Menu Toggle */}
       <button
         onClick={toggleMenu}
-        className="md:hidden p-2 bg-gray-700/20 text-gray-700 rounded-md"
+        className="md:hidden w-12 p-2 bg-gray-700/20 text-gray-700 rounded-md"
       >
         ☰
       </button>
 
       {/* Mobile Menu */}
       {menuOpen && (
-        <div className="absolute top-20 left-0 w-full bg-white/50 backdrop-blur-lg shadow-lg border-t border-white/10 z-40">
+        <div className="md:hidden absolute top-20 left-0 w-full bg-white/50 backdrop-blur-lg shadow-lg border-t border-white/10 z-40">
           <ul className="flex flex-col items-center space-y-2 py-4">
             <li className="cursor-pointer px-6 py-2 text-gray-700 hover:bg-gray-700/10 w-full text-center">
               Home
             </li>
             <li className="cursor-pointer px-6 py-2 text-gray-700 hover:bg-gray-700/10 w-full text-center">
-              Habitaciones
+              Servicios
             </li>
             <li className="cursor-pointer px-6 py-2 text-gray-700 hover:bg-gray-700/10 w-full text-center">
               Precios
