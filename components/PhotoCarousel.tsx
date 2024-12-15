@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import tayrona1 from "../public/tayrona1.jpg";
 import tayrona2 from "../public/tayrona2.webp";
 import tayrona3 from "../public/tayrona3.jpg";
@@ -31,12 +31,13 @@ const PhotoCarousel = () => {
     }
   };
 
-  const nextSlide = () => {
-    if (isTransitioning) return; // Evita múltiples cambios durante la transición
-    setIsAnimating(true); // Activar animación
-    setIsTransitioning(true); // Bloquear nuevos saltos
+  const nextSlide = useCallback(() => {
+    if (isTransitioning) return;
+    setIsAnimating(true);
+    setIsTransitioning(true);
     setCurrentIndex((prevIndex) => prevIndex + 1);
-  };
+  }, [isTransitioning]);  // Dependencias necesarias para la función
+  
 
   const prevSlide = () => {
     if (isTransitioning) return; // Evita múltiples cambios durante la transición
@@ -44,6 +45,18 @@ const PhotoCarousel = () => {
     setIsTransitioning(true); // Bloquear nuevos saltos
     setCurrentIndex((prevIndex) => prevIndex - 1);
   };
+
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      nextSlide();
+    }, 8000);
+  
+    // Limpiar el intervalo cuando el componente se desmonte
+    return () => {
+      clearInterval(intervalId);
+    };
+  },[nextSlide]);  // Arreglo de dependencias vacío para ejecutarse solo una vez
+  
 
   return (
     <div className="relative w-full h-screen overflow-hidden">
