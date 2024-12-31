@@ -40,6 +40,19 @@ export default function NavBar() {
     setMenuOpen((prev) => !prev);
   };
 
+  const handleScrollToSection = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
+    e.preventDefault(); // Previene el comportamiento por defecto del anclaje
+    const target = document.querySelector("#servicios") as HTMLElement;
+    if (target) {
+      const offset = -40; // Ajusta este valor para el desplazamiento deseado
+      const targetPosition = target.offsetTop + offset;
+      window.scrollTo({
+        top: targetPosition,
+        behavior: "smooth", // Desplazamiento suave
+      });
+    }
+  };
+
   return (
     <nav className="fixed top-0 left-0 bg-white/10 backdrop-blur-lg shadow-lg border-b border-white/20 z-50 w-full h-20 items-center flex justify-between px-4 md:px-8">
       {/* Logo */}
@@ -57,7 +70,7 @@ export default function NavBar() {
           <Link href="/">Home</Link>
         </li>
         <li className="cursor-pointer h-full px-6 bg-transparent text-gray-700 flex items-center justify-center hover:bg-gray-700/10">
-          <Link href="/services">Servicios</Link>
+          <Link href="/#servicios" onClick={handleScrollToSection}>Servicios</Link>
         </li>
         <li className="cursor-pointer h-full px-6 bg-transparent text-gray-700 flex items-center justify-center hover:bg-gray-700/10">
         <Link href="/about">Sobre Nosotros</Link>
@@ -93,14 +106,14 @@ export default function NavBar() {
             <Link href="/">Home</Link>
             </li>
             <li className="cursor-pointer px-6 py-2 text-white hover:bg-gray-700/10 w-full text-center">
-            <Link href="/services">Servicios</Link>
+            <Link onClick={()=>{setMenuOpen(false)}} href="/#servicios">Servicios</Link>
             </li>
             <li className="cursor-pointer px-6 py-2 text-white hover:bg-gray-700/10 w-full text-center">
               
-              <Link href="/services">Sobre Nosotros</Link>
+              <Link href="/about">Sobre Nosotros</Link>
             </li>
             <li className="cursor-pointer px-6 py-2 text-white hover:bg-gray-700/10 w-full text-center">
-            <Link href="https://wa.me/3508676834?text=Hola Eden Tayrona Park%2C%20estoy%20interesado%20en%20su%20servicio%20de%20alojamiento%20¿podrian%20darme%20mas%20informacion?">Contáctanos</Link>
+            <Link href="https://wa.me/3508676834?text=Hola Eden Tayrona Park%2C%20estoy%20interesado%20en%20su%20servicio%20de%20alojamiento%20¿podrian%20darme%20mas%20informacion?" >Contáctanos</Link>
             </li>
           </ul>
           <div className="flex justify-center py-2">

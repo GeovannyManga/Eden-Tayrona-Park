@@ -8,7 +8,7 @@ import habitacion from "../public/habitacion.jpg";
 
 export default function Rooms() {
   return (
-    <section className="bg-gray-100 py-12">
+    <section id='servicios'  className="bg-gray-100 py-12">
       <div className="container mx-auto text-center">
         <h2 className="text-4xl font-extrabold text-gray-800 mb-8">
           Descubre Nuestros Servicios
@@ -32,7 +32,7 @@ export default function Rooms() {
                 Disfruta de una experiencia gastronomica única en nuestro restaurante.
               </p>
               <a
-                href="#"
+                href="https://wa.me/3508676834?text=Hola Eden Tayrona Park%2C%20estoy%20interesado%20en%20su%20servicio%20de%20alojamiento%20¿podrian%20darme%20mas%20informacion?"
                 className="inline-block px-6 py-2 text-sm font-semibold text-white bg-blue-600 hover:bg-blue-700 rounded-lg transition-colors duration-300"
               >
                 Ver más
@@ -55,7 +55,7 @@ export default function Rooms() {
                 Perfecta para familias, con espacios amplios y cómodos para todos.
               </p>
               <a
-                href="#"
+                href="https://wa.me/3508676834?text=Hola Eden Tayrona Park%2C%20estoy%20interesado%20en%20su%20servicio%20de%20alojamiento%20¿podrian%20darme%20mas%20informacion?"
                 className="inline-block px-6 py-2 text-sm font-semibold text-white bg-blue-600 hover:bg-blue-700 rounded-lg transition-colors duration-300"
               >
                 Ver más
@@ -78,7 +78,7 @@ export default function Rooms() {
               Disfruta de un spa revitalizante en medio de la belleza natural del Parque Tayrona.
               </p>
               <a
-                href="#"
+               href="https://wa.me/3508676834?text=Hola Eden Tayrona Park%2C%20estoy%20interesado%20en%20su%20servicio%20de%20alojamiento%20¿podrian%20darme%20mas%20informacion?"
                 className="inline-block px-6 py-2 text-sm font-semibold text-white bg-blue-600 hover:bg-blue-700 rounded-lg transition-colors duration-300"
               >
                 Ver más

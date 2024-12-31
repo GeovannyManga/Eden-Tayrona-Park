@@ -1,9 +1,9 @@
 "use client";
 import React, { useState, useEffect, useCallback } from "react";
-import tayrona1 from "../public/tayrona1.jpg";
-import tayrona2 from "../public/tayrona2.webp";
+import tayrona1 from "../public/tayrona4.jpg";
+import tayrona2 from "../public/tayrona2.jpg";
 import tayrona3 from "../public/tayrona3.jpg";
-import tayrona4 from "../public/tayrona4.jpg";
+import tayrona4 from "../public/tayrona1.jpg";
 import Image from "next/image";
 import { Raleway } from "next/font/google";
 
@@ -69,7 +69,7 @@ const PhotoCarousel = () => {
         <h2 className="text-4xl md:text-6xl text-white font-black">
           Eden Tayrona Park
         </h2>
-        <a href="">
+        <a href="https://wa.me/3508676834?text=Hola Eden Tayrona Park%2C%20estoy%20interesado%20en%20su%20servicio%20de%20alojamiento%20¿podrian%20darme%20mas%20informacion?">
           <div className={`flex mt-10 w-40 h-12 bg-green-700 hover:bg-green-900	rounded-lg font-semibold ${raleway.className} items-center justify-center`}>Contáctanos</div>
         </a>
       </div>
@@ -95,7 +95,7 @@ const PhotoCarousel = () => {
             priority
           />
           {/* Capa oscura */}
-          <div className="absolute inset-0 bg-black opacity-40"></div>
+          <div className="absolute inset-0 "></div>
         </div>
 
         {/* Imágenes reales */}
