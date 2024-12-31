@@ -15,7 +15,7 @@ const geistMono = localFont({
 
 export const metadata: Metadata = {
   title: "Eden Tayrona Park",
-  description: "El eden Tayrona Park es un hostal ubicado en el Parque Nacional Natural Tayrona, cuenta con amplias habitaciones para familias y parejas, ademas cuenta con restaurante con comidas tipicas de la zona, ven u disfruta de est expenciencia maravillosa.",
+  description: "El eden Tayrona Park es un hostal ubicado en el Parque Nacional Natural Tayrona, cuenta con amplias habitaciones para familias y parejas",
 };
 
 export default function RootLayout({
