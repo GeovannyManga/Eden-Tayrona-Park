@@ -18,7 +18,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: "https://edentayronapark.com/sitemap",
       lastModified: new Date(),
       changeFrequency: "yearly",
-      priority: 0,
+      priority: 0.5,
     },
   ];
 }
