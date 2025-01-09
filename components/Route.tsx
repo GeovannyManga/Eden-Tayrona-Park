@@ -8,19 +8,19 @@ const routeSteps = [
     id: 1,
     title: "Desde Santa Marta",
     description: "Comienza tu viaje desde el centro de Santa Marta.",
-    videoUrl: "/video1.mp4",
+    videoUrl: "/video1.webm",
   },
   {
     id: 2,
     title: "Carretera a Riohacha",
     description: "Toma la carretera principal hacia Riohacha.",
-    videoUrl: "/video2.mp4",
+    videoUrl: "/video2.webm",
   },
   {
     id: 3,
     title: "Entrada al Parque Tayrona",
     description: "Llega a la entrada principal del parque.",
-    videoUrl: "/video3.mp4",
+    videoUrl: "/video3.webm",
   },
 ];
 
