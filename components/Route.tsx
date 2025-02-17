@@ -8,23 +8,32 @@ const routeSteps = [
     id: 1,
     title: "Desde Santa Marta",
     description: "Comienza tu viaje desde el centro de Santa Marta.",
-    videoUrl: "/video1.webm",
+    videoUrl: "https://youtu.be/KN4NIA1MCFU",
   },
   {
     id: 2,
     title: "Carretera a Riohacha",
     description: "Toma la carretera principal hacia Riohacha.",
-    videoUrl: "/video2.webm",
+    videoUrl: "https://youtu.be/vTvpbw3fpWw",
   },
   {
     id: 3,
     title: "Entrada al Parque Tayrona",
     description: "Llega a la entrada principal del parque.",
-    videoUrl: "/video3.webm",
+    videoUrl: "https://youtu.be/JvPKJEu6BGM",
   },
 ];
 
+
 export default function RouteWithVideos() {
+
+  const getYouTubeID = (url:string) => {
+    const match = url.match(
+      /(?:youtube\.com\/(?:[^\/]+\/[^\/]+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/\s]{11})/
+    );
+    return match ? match[1] : null;
+  };
+  
   return (
     <section className="bg-white py-16 px-4 sm:px-8">
       <div className="max-w-7xl mx-auto">
@@ -59,13 +68,16 @@ export default function RouteWithVideos() {
 
               {/* Video */}
               <div className="w-full sm:w-1/2 px-4">
-                <video
-                  controls
-                  className="w-full rounded-lg shadow-lg border border-gray-200"
-                >
-                  <source src={step.videoUrl} type="video/mp4" />
-                  Tu navegador no soporta videos.
-                </video>
+              <iframe
+            width="100%"
+            height="200"
+            src={`https://www.youtube.com/embed/${getYouTubeID(step.videoUrl)}`}
+            title={`Video sobre ${step.title}`}
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+            className="w-full rounded-lg shadow-lg border border-gray-200"
+          />
               </div>
             </div>
           ))}
