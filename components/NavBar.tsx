@@ -3,11 +3,18 @@ import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import logo from "../public/image.png";
 import Link from 'next/link';
+import { useLanguage } from "../components/LanguajeProvider";
+
 
 export default function NavBar() {
+  const {language, switchLanguage, t } = useLanguage()
+  console.log(language)
+  const handlerchange = (e:React.ChangeEvent<HTMLSelectElement>)=>{
+    const value = e.target.value
+    switchLanguage(value)
+  }
   const [menuOpen, setMenuOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
-
   // Detectar el tamaño de la ventana y ajustar el menú
   useEffect(() => {
     const handleResize = () => {
@@ -52,6 +59,7 @@ export default function NavBar() {
       });
     }
   };
+  
 
   return (
     <nav className="fixed top-0 left-0 bg-white/10 backdrop-blur-lg shadow-lg border-b border-white/20 z-50 w-full h-20 items-center flex justify-between px-4 md:px-8">
@@ -67,27 +75,28 @@ export default function NavBar() {
       {/* Desktop Menu */}
       <ul className="hidden md:flex w-auto h-10 bg-white/80 backdrop-blur-md items-center justify-center rounded-lg p-2 shadow-md border border-white/20">
         <li className="cursor-pointer h-full px-6 bg-transparent text-gray-700 flex items-center justify-center rounded-l-md hover:bg-gray-700/10">
-          <Link href="/">Home</Link>
+          <Link href="/">{t.menu.home}</Link>
         </li>
         <li className="cursor-pointer h-full px-6 bg-transparent text-gray-700 flex items-center justify-center hover:bg-gray-700/10">
-          <Link href="/#servicios" onClick={handleScrollToSection}>Servicios</Link>
+          <Link href="/#servicios" onClick={handleScrollToSection}>{t.menu.servicios}</Link>
         </li>
         <li className="cursor-pointer h-full px-6 bg-transparent text-gray-700 flex items-center justify-center hover:bg-gray-700/10">
-        <Link href="/about">Sobre Nosotros</Link>
+        <Link href="/about">{t.menu.sobre}</Link>
         </li>
         <li className="cursor-pointer h-full px-6 bg-transparent text-gray-700 flex items-center justify-center rounded-r-md hover:bg-gray-700/10">
-          <Link href="https://wa.me/3508676834?text=Hola Eden Tayrona Park%2C%20estoy%20interesado%20en%20su%20servicio%20de%20alojamiento%20¿podrian%20darme%20mas%20informacion?">Contáctanos</Link>
+          <Link href="https://wa.me/3508676834?text=Hola Eden Tayrona Park%2C%20estoy%20interesado%20en%20su%20servicio%20de%20alojamiento%20¿podrian%20darme%20mas%20informacion?">{t.menu.contacto}</Link>
         </li>
       </ul>
 
       {/* Language Selector */}
       <select
+      onChange={handlerchange}
         className="hidden md:block bg-white/80 text-black backdrop-blur-md p-2 rounded-md border focus:outline-none focus:ring-0 border-white/40 shadow-sm"
         name=""
         id=""
       >
-        <option value="Spanish">Spanish</option>
-        <option value="English">English</option>
+        <option value="en">English</option>
+        <option value="es">Español</option>
       </select>
 
       {/* Mobile Menu Toggle */}
@@ -103,14 +112,14 @@ export default function NavBar() {
         <div className="md:hidden absolute top-20 left-0 w-full h-screen bg-gray-700 z-40">
           <ul className="flex flex-col items-center space-y-2 py-4">
             <li className="cursor-pointer px-6 py-2 text-white hover:bg-gray-700/10 w-full text-center">
-            <Link href="/">Home</Link>
+            <Link href="/">{t.menu.home}</Link>
             </li>
             <li className="cursor-pointer px-6 py-2 text-white hover:bg-gray-700/10 w-full text-center">
-            <Link onClick={()=>{setMenuOpen(false)}} href="/#servicios">Servicios</Link>
+            <Link onClick={()=>{setMenuOpen(false)}} href="/#servicios">{t.menu.servicios}</Link>
             </li>
             <li className="cursor-pointer px-6 py-2 text-white hover:bg-gray-700/10 w-full text-center">
               
-              <Link href="/about">Sobre Nosotros</Link>
+              <Link href="/about">{t.menu.sobre}</Link>
             </li>
             <li className="cursor-pointer px-6 py-2 text-white hover:bg-gray-700/10 w-full text-center">
             <Link href="https://wa.me/3508676834?text=Hola Eden Tayrona Park%2C%20estoy%20interesado%20en%20su%20servicio%20de%20alojamiento%20¿podrian%20darme%20mas%20informacion?" >Contáctanos</Link>
@@ -118,12 +127,13 @@ export default function NavBar() {
           </ul>
           <div className="flex justify-center py-2">
             <select
+            onChange={handlerchange}
               className="bg-white/80 focus:outline-none focus:ring-0 text-black backdrop-blur-md p-2 rounded-md border border-white/40 shadow-sm"
               name=""
               id=""
             >
-              <option value="Spanish">Spanish</option>
-              <option value="English">English</option>
+              <option value="en">English</option>
+              <option value="es">Spanish</option>
             </select>
           </div>
         </div>

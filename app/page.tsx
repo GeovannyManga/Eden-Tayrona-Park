@@ -11,9 +11,10 @@ import Footer from "../components/Footer";
 const Maps = dynamic(() => import("../components/Maps"), { ssr: false});
 
 export default function Home() {
+ 
   return (
     <div>
-      <NavBar />
+      <NavBar  />
       <PhotoCarousel />
       <Rooms />
       <Maps /> {/* Muestra el componente Maps cargado dinámicamente */}

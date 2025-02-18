@@ -6,6 +6,7 @@ import tayrona3 from "../public/tayrona3.jpg";
 import tayrona4 from "../public/tayrona1.jpg";
 import Image from "next/image";
 import { Raleway } from "next/font/google";
+import { useLanguage } from "../components/LanguajeProvider";
 
 const raleway = Raleway({
   subsets: ["latin"],
@@ -13,6 +14,7 @@ const raleway = Raleway({
 });
 
 const PhotoCarousel = () => {
+  const {t}= useLanguage()
   const images = [tayrona1, tayrona2, tayrona3, tayrona4];
   const [currentIndex, setCurrentIndex] = useState(1); // Comienza en la primera imagen real
   const [isAnimating, setIsAnimating] = useState(true); // Controla si la animación está habilitada
@@ -64,13 +66,13 @@ const PhotoCarousel = () => {
         className={`${raleway.className} z-10 absolute  transform w-full h-auto top-80 md:top-1/2 flex flex-col items-center justify-center text-center`}
       >
         <h2 className="text-4xl md:text-6xl text-white font-black">
-          Bienvenido a
+          {t.welcome.bien}
         </h2>
         <h2 className="text-4xl md:text-6xl text-white font-black">
-          Eden Tayrona Park
+          {t.welcome.eden}
         </h2>
         <a href="https://wa.me/3508676834?text=Hola Eden Tayrona Park%2C%20estoy%20interesado%20en%20su%20servicio%20de%20alojamiento%20¿podrian%20darme%20mas%20informacion?">
-          <div className={`flex mt-10 w-40 h-12 bg-green-700 hover:bg-green-900	rounded-lg font-semibold ${raleway.className} items-center justify-center`}>Contáctanos</div>
+          <div className={`flex mt-10 w-40 h-12 bg-green-700 hover:bg-green-900	rounded-lg font-semibold ${raleway.className} items-center justify-center`}>{t.welcome.contact}</div>
         </a>
       </div>
 

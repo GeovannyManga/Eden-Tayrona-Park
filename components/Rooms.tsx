@@ -5,16 +5,18 @@ import Image from "next/image";
 import comida from "../public/comida.jpg";
 import masaje from "../public/masaje.avif";
 import habitacion from "../public/habitacion.jpg";
+import { useLanguage } from "./LanguajeProvider";
 
 export default function Rooms() {
+  const {t} = useLanguage() 
   return (
     <section id='servicios'  className="bg-gray-100 py-12">
       <div className="container mx-auto text-center">
         <h2 className="text-4xl font-extrabold text-gray-800 mb-8">
-          Descubre Nuestros Servicios
+          {t.servicios.descubre}
         </h2>
         <p className="text-lg text-gray-600 mb-12">
-          Cada una de nuestras habitaciones ofrece comodidad y estilo para una estancia inolvidable.
+         {t.servicios.comodidad}
         </p>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {/* Tarjeta 1 */}
@@ -27,15 +29,15 @@ export default function Rooms() {
               height={1000}
             />
             <div className="p-6">
-              <h3 className="text-xl font-semibold text-gray-800 mb-2">Restaurante</h3>
+              <h3 className="text-xl font-semibold text-gray-800 mb-2">{t.servicios.restaurante}</h3>
               <p className="text-gray-600 mb-4">
-                Disfruta de una experiencia gastronomica única en nuestro restaurante.
+               {t.servicios.descripcion1}
               </p>
               <a
                 href="https://wa.me/3508676834?text=Hola Eden Tayrona Park%2C%20estoy%20interesado%20en%20su%20servicio%20de%20alojamiento%20¿podrian%20darme%20mas%20informacion?"
                 className="inline-block px-6 py-2 text-sm font-semibold text-white bg-blue-600 hover:bg-blue-700 rounded-lg transition-colors duration-300"
               >
-                Ver más
+                {t.servicios.see}
               </a>
             </div>
           </div>
@@ -50,15 +52,15 @@ export default function Rooms() {
               height={1000}
             />
             <div className="p-6">
-              <h3 className="text-xl font-semibold text-gray-800 mb-2">Habitación Familiar</h3>
+              <h3 className="text-xl font-semibold text-gray-800 mb-2">{t.servicios.room}</h3>
               <p className="text-gray-600 mb-4">
-                Perfecta para familias, con espacios amplios y cómodos para todos.
+                {t.servicios.descripcion2}
               </p>
               <a
                 href="https://wa.me/3508676834?text=Hola Eden Tayrona Park%2C%20estoy%20interesado%20en%20su%20servicio%20de%20alojamiento%20¿podrian%20darme%20mas%20informacion?"
                 className="inline-block px-6 py-2 text-sm font-semibold text-white bg-blue-600 hover:bg-blue-700 rounded-lg transition-colors duration-300"
               >
-                Ver más
+                {t.servicios.see}
               </a>
             </div>
           </div>
@@ -73,15 +75,15 @@ export default function Rooms() {
               height={1000}
             />
             <div className="p-6">
-              <h3 className="text-xl font-semibold text-gray-800 mb-2">Servicio de Spa</h3>
+              <h3 className="text-xl font-semibold text-gray-800 mb-2">{t.servicios.spa}</h3>
               <p className="text-gray-600 mb-4">
-              Disfruta de un spa revitalizante en medio de la belleza natural del Parque Tayrona.
+             {t.servicios.descripcion3}
               </p>
               <a
                href="https://wa.me/3508676834?text=Hola Eden Tayrona Park%2C%20estoy%20interesado%20en%20su%20servicio%20de%20alojamiento%20¿podrian%20darme%20mas%20informacion?"
                 className="inline-block px-6 py-2 text-sm font-semibold text-white bg-blue-600 hover:bg-blue-700 rounded-lg transition-colors duration-300"
               >
-                Ver más
+                {t.servicios.see}
               </a>
             </div>
           </div>
