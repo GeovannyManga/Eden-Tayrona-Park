@@ -1,9 +1,12 @@
+"use client"
 import React from 'react';
 import Image from 'next/image';
 import NavBar from '../../components/NavBar';
 import Footer from "../../components/Footer";
+import { useLanguage } from "../../components/LanguajeProvider";
 
 export default function About() {
+  const {t}= useLanguage()
   return (
     <div>
       {/* NavBar */}
@@ -29,31 +32,23 @@ export default function About() {
           {/* Right Section: Content */}
           <div className="flex flex-col space-y-4 text-gray-800">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
-              Bienvenidos a Eden Tayrona Park
+              {t.about.welcome}
             </h2>
             <p className="text-lg leading-relaxed">
-              Ubicado en el corazón del Parque Nacional Natural Tayrona, Eden Tayrona Park es
-              un lugar ideal para familias y turistas que buscan una experiencia única en la
-              naturaleza. Nuestro hostal ofrece un entorno tranquilo y cómodo, rodeado de la
-              belleza natural que caracteriza esta increíble región.
+              {t.about.ubicacion}
             </p>
             <p className="text-lg leading-relaxed">
-              Fundado y dirigido por <strong>Alex Casimiro</strong>, Eden Tayrona Park combina
-              hospitalidad cálida con instalaciones diseñadas para tu confort. Además de nuestro
-              alojamiento, ofrecemos un restaurante donde puedes disfrutar de{' '}
-              <strong>comidas típicas</strong>, elaboradas con ingredientes locales para deleitar
-              tu paladar.
+              {t.about.uno} <strong>Alex Casimiro</strong>, {t.about.dos}{' '}
+              <strong>{t.about.tres}</strong>, {t.about.cuatro}
             </p>
             <p className="text-lg leading-relaxed">
-              Ya sea que estés planeando unas vacaciones familiares, una escapada romántica o una
-              aventura en solitario, en Eden Tayrona Park te garantizamos una experiencia
-              inolvidable.
+              {t.about.cinco}
             </p>
             <a
               href="https://wa.me/3508676834?text=Hola Eden Tayrona Park%2C%20estoy%20interesado%20en%20su%20servicio%20de%20alojamiento%20¿podrian%20darme%20mas%20informacion?"
               className="text-center mt-4 inline-block bg-green-600 text-white py-4 px-8 rounded-lg shadow-md hover:bg-green-700 transition"
             >
-              Contáctanos
+              {t.about.seis}
             </a>
           </div>
         </div>

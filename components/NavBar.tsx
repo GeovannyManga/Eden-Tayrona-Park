@@ -47,8 +47,8 @@ export default function NavBar() {
     setMenuOpen((prev) => !prev);
   };
 
-  const handleScrollToSection = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
-    e.preventDefault(); // Previene el comportamiento por defecto del anclaje
+  const handleScrollToSection = () => {
+    // Previene el comportamiento por defecto del anclaje
     const target = document.querySelector("#servicios") as HTMLElement;
     if (target) {
       const offset = -40; // Ajusta este valor para el desplazamiento deseado
@@ -78,7 +78,7 @@ export default function NavBar() {
           <Link href="/">{t.menu.home}</Link>
         </li>
         <li className="cursor-pointer h-full px-6 bg-transparent text-gray-700 flex items-center justify-center hover:bg-gray-700/10">
-          <Link href="/#servicios" onClick={handleScrollToSection}>{t.menu.servicios}</Link>
+          <Link onClick={handleScrollToSection}  href="/#servicios" >{t.menu.servicios}</Link>
         </li>
         <li className="cursor-pointer h-full px-6 bg-transparent text-gray-700 flex items-center justify-center hover:bg-gray-700/10">
         <Link href="/about">{t.menu.sobre}</Link>
@@ -94,6 +94,7 @@ export default function NavBar() {
         className="hidden md:block bg-white/80 text-black backdrop-blur-md p-2 rounded-md border focus:outline-none focus:ring-0 border-white/40 shadow-sm"
         name=""
         id=""
+        defaultValue={language}
       >
         <option value="en">English</option>
         <option value="es">Español</option>

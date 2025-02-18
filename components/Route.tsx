@@ -1,31 +1,34 @@
 "use client";
 
 import React from "react";
+import { useLanguage } from "./LanguajeProvider";
 
+export default function RouteWithVideos() {
+
+  const {t} = useLanguage()
 // Datos de la ruta
 const routeSteps = [
   {
     id: 1,
-    title: "Desde Santa Marta",
-    description: "Comienza tu viaje desde el centro de Santa Marta.",
+    title: [t.ruta.ruta1][0],
+    description: [t.ruta.description1][0],
     videoUrl: "https://youtu.be/KN4NIA1MCFU",
   },
   {
     id: 2,
-    title: "Carretera a Riohacha",
-    description: "Toma la carretera principal hacia Riohacha.",
+    title: [t.ruta.ruta2][0],
+    description: [t.ruta.description2][0],
     videoUrl: "https://youtu.be/vTvpbw3fpWw",
   },
   {
     id: 3,
-    title: "Entrada al Parque Tayrona",
-    description: "Llega a la entrada principal del parque.",
+    title: [t.ruta.ruta3][0],
+    description: [t.ruta.description3][0],
     videoUrl: "https://youtu.be/JvPKJEu6BGM",
   },
 ];
 
 
-export default function RouteWithVideos() {
 
   const getYouTubeID = (url:string) => {
     const match = url.match(
@@ -39,9 +42,9 @@ export default function RouteWithVideos() {
       <div className="max-w-7xl mx-auto">
         {/* Encabezado */}
         <div className="text-center mb-10">
-          <h1 className="text-4xl font-bold text-gray-800">Ruta al Parque Tayrona</h1>
+          <h1 className="text-4xl font-bold text-gray-800">{t.ruta.ruta}</h1>
           <p className="text-lg text-gray-600 mt-4">
-            Sigue estos pasos para llegar al paraíso. Cada punto incluye un video con más detalles.
+            {t.ruta.pasos}
           </p>
         </div>
 
