@@ -1,7 +1,7 @@
 'use client';
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
-import logo from "../public/image.png";
+import logo from "../public/image.webp";
 import Link from 'next/link';
 import { useLanguage } from "../components/LanguajeProvider";
 

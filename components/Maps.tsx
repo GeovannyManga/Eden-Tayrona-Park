@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import L from "leaflet";
-import cabana from "../public/cabana.png";
+import cabana from "../public/cabana.webp";
 import "leaflet/dist/leaflet.css";
 import { useLanguage } from "./LanguajeProvider";
 

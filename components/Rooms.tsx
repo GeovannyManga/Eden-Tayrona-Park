@@ -2,9 +2,9 @@
 
 import React from 'react';
 import Image from "next/image";
-import comida from "../public/comida.jpg";
+import comida from "../public/comida.webp";
 import masaje from "../public/masaje.avif";
-import habitacion from "../public/habitacion.jpg";
+import habitacion from "../public/habitacion.webp";
 import { useLanguage } from "./LanguajeProvider";
 
 export default function Rooms() {
