@@ -7,6 +7,7 @@ import tayrona4 from "../public/tayrona1.webp";
 import Image from "next/image";
 import { Raleway } from "next/font/google";
 import { useLanguage } from "../components/LanguajeProvider";
+import Text from "./Text";
 
 const raleway = Raleway({
   subsets: ["latin"],
@@ -66,12 +67,8 @@ const PhotoCarousel = () => {
       <div
         className={`${raleway.className} z-10 absolute  transform w-full h-auto top-80 md:top-1/2 flex flex-col items-center justify-center text-center`}
       >
-        <h2 className="text-4xl md:text-6xl text-white font-black">
-          {t.welcome.bien}
-        </h2>
-        <h2 className="text-4xl md:text-6xl text-white font-black">
-        Eden Tayrona Park
-        </h2>
+        <Text text1={t.welcome.bien}/>
+        <Text text1={t.welcome.eden}/>
         <a href="https://wa.me/3508676834?text=Hola Eden Tayrona Park%2C%20estoy%20interesado%20en%20su%20servicio%20de%20alojamiento%20¿podrian%20darme%20mas%20informacion?">
           <div className={`flex mt-10 w-40 h-12 bg-green-700 hover:bg-green-900	rounded-lg font-semibold ${raleway.className} items-center justify-center`}>{t.welcome.contact}</div>
         </a>
