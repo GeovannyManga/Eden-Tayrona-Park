@@ -148,7 +148,7 @@ const PhotoCarousel = () => {
       {/* Indicadores */}
       <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
         {images.map((_, index) => (
-          <button
+          <button title="botom-next"
             key={index}
             onClick={() => {
               if (isTransitioning) return; // Bloquear clicks rápidos en los indicadores
