@@ -69,7 +69,7 @@ const PhotoCarousel = () => {
       <div
         className={`${raleway.className} z-10 absolute  transform w-full h-auto top-80 md:top-1/2 flex flex-col items-center justify-center text-center`}
       >
-        <h2 className="text-4xl md:text-6xl text-white font-black">
+        <h2 className={`${isRedy?"text-4xl md:text-6xl text-white font-black":""}`}>
           {t.welcome.bien}
         </h2>
         <h2 className={`${isRedy?"text-4xl md:text-6xl text-white font-black":""}`}>
