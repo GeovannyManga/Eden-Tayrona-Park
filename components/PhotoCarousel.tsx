@@ -1,5 +1,6 @@
 "use client";
 import React, { useState, useEffect, useCallback } from "react";
+import dynamic from "next/dynamic";
 import tayrona1 from "../public/tayrona4.webp";
 import tayrona2 from "../public/tayrona2.webp";
 import tayrona3 from "../public/tayrona3.webp";
@@ -7,7 +8,11 @@ import tayrona4 from "../public/tayrona1.webp";
 import Image from "next/image";
 import { Raleway } from "next/font/google";
 import { useLanguage } from "../components/LanguajeProvider";
-import Text from "./Text";
+
+const Text  = dynamic(() => import("./Text"), {
+  ssr: false, // Desactiva el renderizado en servidor (opcional)
+  loading: () => <p>Cargando...</p>, // Mensaje mientras carga
+});
 
 const raleway = Raleway({
   subsets: ["latin"],
