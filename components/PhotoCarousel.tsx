@@ -19,13 +19,8 @@ const PhotoCarousel = () => {
   const [currentIndex, setCurrentIndex] = useState(1); // Comienza en la primera imagen real
   const [isAnimating, setIsAnimating] = useState(true); // Controla si la animación está habilitada
   const [isTransitioning, setIsTransitioning] = useState(false); // Evita saltos durante la transición
-  const [isReady, setIsReady] = useState(false);
 
-  useEffect(() => {
-    setIsReady(true);
-  }, []);
   const handleTransitionEnd = () => {
-
     setIsTransitioning(false); // Permitir nuevos saltos
     if (currentIndex === 0) {
       // Sin animación, mover al último elemento real
@@ -73,9 +68,9 @@ const PhotoCarousel = () => {
         <h2 className="text-4xl md:text-6xl text-white font-black">
           {t.welcome.bien}
         </h2>
-        {isReady?(<h1 className="text-4xl md:text-6xl text-white font-black">
+        <h2 className="text-4xl md:text-6xl text-white font-black">
           {t.welcome.eden}
-        </h1>): ""}
+        </h2>
         <a href="https://wa.me/3508676834?text=Hola Eden Tayrona Park%2C%20estoy%20interesado%20en%20su%20servicio%20de%20alojamiento%20¿podrian%20darme%20mas%20informacion?">
           <div className={`flex mt-10 w-40 h-12 bg-green-700 hover:bg-green-900	rounded-lg font-semibold ${raleway.className} items-center justify-center`}>{t.welcome.contact}</div>
         </a>
@@ -112,8 +107,8 @@ const PhotoCarousel = () => {
               alt={`Slide ${index}`}
               src={image}
               className="w-full h-full object-cover"
-              width={1280}
-              height={750}
+              width={1920}
+              height={1080}
               priority
             />
             {/* Capa oscura */}
@@ -153,7 +148,7 @@ const PhotoCarousel = () => {
       {/* Indicadores */}
       <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
         {images.map((_, index) => (
-          <button title="botom-next"
+          <button
             key={index}
             onClick={() => {
               if (isTransitioning) return; // Bloquear clicks rápidos en los indicadores
