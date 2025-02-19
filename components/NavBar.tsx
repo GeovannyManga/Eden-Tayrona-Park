@@ -65,12 +65,14 @@ export default function NavBar() {
     <nav className="fixed top-0 left-0 bg-white/10 backdrop-blur-lg shadow-lg border-b border-white/20 z-50 w-full h-20 items-center flex justify-between px-4 md:px-8">
       {/* Logo */}
       <Image
-        className="w-16 h-16 rounded-lg"
-        src={logo}
-        width={1490}
-        height={1170}
-        alt="logo de Eden Tayrona Park"
-      />
+  className="w-16 h-16 rounded-lg"
+  src={logo}
+  width={64}  // Ajustar al tamaño real de w-16 h-16
+  height={64}
+  alt="logo de Eden Tayrona Park"
+  priority={true}  // Carga inmediata
+/>
+
 
       {/* Desktop Menu */}
       <ul className="hidden md:flex w-auto h-10 bg-white/80 backdrop-blur-md items-center justify-center rounded-lg p-2 shadow-md border border-white/20">
