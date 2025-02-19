@@ -34,6 +34,7 @@ export default function Rooms() {
                {t.servicios.descripcion1}
               </p>
               <a
+                aria-label='contacta por whatsapp para mas informacion'
                 href="https://wa.me/3508676834?text=Hola Eden Tayrona Park%2C%20estoy%20interesado%20en%20su%20servicio%20de%20alojamiento%20¿podrian%20darme%20mas%20informacion?"
                 className="inline-block px-6 py-2 text-sm font-semibold text-white bg-blue-600 hover:bg-blue-700 rounded-lg transition-colors duration-300"
               >
@@ -57,6 +58,7 @@ export default function Rooms() {
                 {t.servicios.descripcion2}
               </p>
               <a
+              aria-label='contacta por whatsapp para mas informacion'
                 href="https://wa.me/3508676834?text=Hola Eden Tayrona Park%2C%20estoy%20interesado%20en%20su%20servicio%20de%20alojamiento%20¿podrian%20darme%20mas%20informacion?"
                 className="inline-block px-6 py-2 text-sm font-semibold text-white bg-blue-600 hover:bg-blue-700 rounded-lg transition-colors duration-300"
               >
@@ -80,6 +82,7 @@ export default function Rooms() {
              {t.servicios.descripcion3}
               </p>
               <a
+              aria-label='contacta por whatsapp para mas informacion'
                href="https://wa.me/3508676834?text=Hola Eden Tayrona Park%2C%20estoy%20interesado%20en%20su%20servicio%20de%20alojamiento%20¿podrian%20darme%20mas%20informacion?"
                 className="inline-block px-6 py-2 text-sm font-semibold text-white bg-blue-600 hover:bg-blue-700 rounded-lg transition-colors duration-300"
               >
