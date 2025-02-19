@@ -21,7 +21,7 @@ const PhotoCarousel = () => {
   const [isTransitioning, setIsTransitioning] = useState(false); // Evita saltos durante la transición
 
   const handleTransitionEnd = () => {
-    setIsTransitioning(false); // Permitir nuevos saltos
+     // Permitir nuevos saltos
     if (currentIndex === 0) {
       // Sin animación, mover al último elemento real
       setIsAnimating(false);
@@ -58,6 +58,12 @@ const PhotoCarousel = () => {
       clearInterval(intervalId);
     };
   },[nextSlide]);  // Arreglo de dependencias vacío para ejecutarse solo una vez
+  const [isReady, setIsReady] = useState(false);
+
+    useEffect(() => {
+      setIsReady(true);
+    }, []);
+    setIsTransitioning(false);
   
 
   return (
@@ -68,9 +74,11 @@ const PhotoCarousel = () => {
         <h2 className="text-4xl md:text-6xl text-white font-black">
           {t.welcome.bien}
         </h2>
+        {isReady ? (
         <h1 className="text-4xl md:text-6xl text-white font-black">
           {t.welcome.eden}
         </h1>
+      ) : null}
         <a href="https://wa.me/3508676834?text=Hola Eden Tayrona Park%2C%20estoy%20interesado%20en%20su%20servicio%20de%20alojamiento%20¿podrian%20darme%20mas%20informacion?">
           <div className={`flex mt-10 w-40 h-12 bg-green-700 hover:bg-green-900	rounded-lg font-semibold ${raleway.className} items-center justify-center`}>{t.welcome.contact}</div>
         </a>
