@@ -19,6 +19,7 @@ const PhotoCarousel = () => {
   const [currentIndex, setCurrentIndex] = useState(1); // Comienza en la primera imagen real
   const [isAnimating, setIsAnimating] = useState(true); // Controla si la animación está habilitada
   const [isTransitioning, setIsTransitioning] = useState(false); // Evita saltos durante la transición
+  const [isRedy, setIsRedy] = useState(false)
 
   const handleTransitionEnd = () => {
     setIsTransitioning(false); // Permitir nuevos saltos
@@ -59,6 +60,9 @@ const PhotoCarousel = () => {
     };
   },[nextSlide]);  // Arreglo de dependencias vacío para ejecutarse solo una vez
   
+  useEffect(()=>{
+    setIsRedy(true)
+  },[])
 
   return (
     <div className="relative w-full h-screen overflow-hidden">
@@ -68,7 +72,7 @@ const PhotoCarousel = () => {
         <h2 className="text-4xl md:text-6xl text-white font-black">
           {t.welcome.bien}
         </h2>
-        <h2 className="text-3xl md:text-5xl text-white font-black">
+        <h2 className={`${isRedy?"text-4xl md:text-6xl text-white font-black":""}`}>
         Eden Tayrona Park
         </h2>
         <a href="https://wa.me/3508676834?text=Hola Eden Tayrona Park%2C%20estoy%20interesado%20en%20su%20servicio%20de%20alojamiento%20¿podrian%20darme%20mas%20informacion?">
