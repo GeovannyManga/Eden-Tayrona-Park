@@ -2,6 +2,12 @@
 
 import React from "react";
 import { useLanguage } from "./LanguajeProvider";
+import dynamic from "next/dynamic";
+const Video  = dynamic(() => import("./Video"), {
+  ssr: false, // Desactiva el renderizado en servidor (opcional)
+  loading: () => <p>Cargando...</p>, // Mensaje mientras carga
+});
+
 
 export default function RouteWithVideos() {
 
@@ -71,15 +77,8 @@ const routeSteps = [
 
               {/* Video */}
               <div className="w-full sm:w-1/2 px-4">
-              <iframe
-  className="w-full h-[200px] sm:h-[315px] rounded-lg shadow-lg border border-gray-200"
-  src={`https://www.youtube-nocookie.com/embed/${getYouTubeID(step.videoUrl)}?rel=0`}
-  title={`Video sobre ${step.title}`}
-  frameBorder="0"
-  loading="lazy"
-  allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-  allowFullScreen
-/>
+              <Video videoUrl={`${getYouTubeID(step.videoUrl)}`} videoTitle={`${step.title}`} />
+
 
               </div>
             </div>
