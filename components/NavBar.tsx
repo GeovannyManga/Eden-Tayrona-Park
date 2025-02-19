@@ -1,7 +1,7 @@
 'use client';
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
-import logo from "../public/image.webp";
+import logo from "../public/image.avif";
 import Link from 'next/link';
 import { useLanguage } from "../components/LanguajeProvider";
 
@@ -67,8 +67,8 @@ export default function NavBar() {
       <Image
         className="w-16 h-16 rounded-lg"
         src={logo}
-        width={200}
-        height={100}
+        width={1490}
+        height={1170}
         alt="logo de Eden Tayrona Park"
       />
 
