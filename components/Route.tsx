@@ -72,15 +72,15 @@ const routeSteps = [
               {/* Video */}
               <div className="w-full sm:w-1/2 px-4">
               <iframe
-            width="100%"
-            height="200"
-            src={`https://www.youtube.com/embed/${getYouTubeID(step.videoUrl)}`}
-            title={`Video sobre ${step.title}`}
-            frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-            className="w-full rounded-lg shadow-lg border border-gray-200"
-          />
+  className="w-full h-[200px] sm:h-[315px] rounded-lg shadow-lg border border-gray-200"
+  src={`https://www.youtube-nocookie.com/embed/${getYouTubeID(step.videoUrl)}?rel=0`}
+  title={`Video sobre ${step.title}`}
+  frameBorder="0"
+  loading="lazy"
+  allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowFullScreen
+/>
+
               </div>
             </div>
           ))}
