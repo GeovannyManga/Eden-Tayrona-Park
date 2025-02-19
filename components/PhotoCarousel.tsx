@@ -137,12 +137,14 @@ const PhotoCarousel = () => {
 
       {/* Controles */}
       <button
+      aria-label="ir a la anterior foto"
         onClick={prevSlide}
         className="z-20 absolute top-1/2 left-4 transform -translate-y-1/2 bg-black bg-opacity-50 text-white rounded-full px-4 py-2"
       >
         ‹
       </button>
       <button
+      aria-label="ir a la siguiente foto"
         onClick={nextSlide}
         className="z-20 absolute top-1/2 right-4 transform -translate-y-1/2 bg-black bg-opacity-50 text-white rounded-full px-4 py-2"
       >
@@ -153,6 +155,7 @@ const PhotoCarousel = () => {
       <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
         {images.map((_, index) => (
           <button
+          aria-label="ir a la foto"
             key={index}
             onClick={() => {
               if (isTransitioning) return; // Bloquear clicks rápidos en los indicadores
