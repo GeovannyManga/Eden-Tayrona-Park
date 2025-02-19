@@ -107,8 +107,8 @@ const PhotoCarousel = () => {
               alt={`Slide ${index}`}
               src={image}
               className="w-full h-full object-cover"
-              width={1920}
-              height={1080}
+              width={1280}
+              height={750}
               priority
             />
             {/* Capa oscura */}
