@@ -68,7 +68,7 @@ const PhotoCarousel = () => {
         <h2 className="text-4xl md:text-6xl text-white font-black">
           {t.welcome.bien}
         </h2>
-        <h2 className="text-4xl md:text-5xl text-white font-black">
+        <h2 className="text-3xl md:text-5xl text-white font-black">
           {t.welcome.eden}
         </h2>
         <a href="https://wa.me/3508676834?text=Hola Eden Tayrona Park%2C%20estoy%20interesado%20en%20su%20servicio%20de%20alojamiento%20¿podrian%20darme%20mas%20informacion?">
